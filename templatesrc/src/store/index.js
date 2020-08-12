@@ -86,10 +86,7 @@ export default new Vuex.Store({
     },
     async createNewUser({ commit, dispatch }, userData) {
       try {
-        let res = await axios.post(
-          this.state.endpoints.baseUrl + "user/create/",
-          userData
-        );
+        let res = await api.post("user/create/", userData);
         dispatch("login", userData);
       } catch (error) {
         console.error(error);
