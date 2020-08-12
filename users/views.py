@@ -26,6 +26,6 @@ class Users(APIView):
 
 
 class UserCreateAPIView(generics.CreateAPIView):
+    # permission_classes = [AllowAny,]
     queryset = CustomUser.objects.all()
     serializer_class = UserSerializer
-    permission_classes = [AllowAny,]
