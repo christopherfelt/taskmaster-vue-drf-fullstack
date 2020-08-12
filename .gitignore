@@ -3,6 +3,5 @@
 local_settings.py
 db.sqlite3
 db.sqlite3-journal
-jwt1/urls.py
 static
 staticfiles
