@@ -1,8 +1,8 @@
 import axios from "axios";
 import router from "../router";
 
-let base = window.location.host.includes("localhost")
-  ? "//localhost:8000/"
+let base = window.location.host.includes("127.0.0.1")
+  ? "http://127.0.0.1:8000/"
   : "/";
 
 axios.defaults.xsrfCookieName = "csrftoken";

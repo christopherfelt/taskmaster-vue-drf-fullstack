@@ -11,12 +11,16 @@ Vue.use(Vuex);
 axios.defaults.xsrfCookieName = "csrftoken";
 axios.defaults.xsrfHeadername = "X-CSRFToken";
 
-let base = window.location.host.includes("localhost")
-  ? "//localhost:3000/"
+// let base = window.location.host.includes("localhost")
+//   ? "//localhost:3000/"
+//   : "/";
+
+let base = window.location.host.includes("127.0.0.1")
+  ? "http://127.0.0.1:8000/"
   : "/";
 
 let api = axios.create({
-  baseURL: "http://127.0.0.1:8000/",
+  baseURL: base,
   timeout: 3000,
   withCredentials: true,
   headers: {
