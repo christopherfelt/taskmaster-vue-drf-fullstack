@@ -159,7 +159,7 @@ CORS_ALLOW_CREDENTIALS = True
 CORS_ORIGIN_WHITELIST = (
     'http://localhost:8080',
     'http://127.0.0.1:8000',
-    'https://taskmaster-vue-drf.herokuapp.com/'
+    'https://taskmaster-vue-drf.herokuapp.com'
 )
 
 REST_FRAMEWORK = {
