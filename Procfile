@@ -1,1 +1,1 @@
-web: gunicorn jwt1.wsgi.application
+web: gunicorn jwt1.wsgi
