@@ -14,7 +14,7 @@ SECRET_KEY = 'e&&_vryj692zrsay%1m9l-oe_-)i$)&9z0+%ovs$zmmo$yn!99'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["https://taskmaster-vue-drf.herokuapp.com/", "localhost", "127.0.0.1"]
 
 
 # Application definition
