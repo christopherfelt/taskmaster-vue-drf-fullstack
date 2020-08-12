@@ -78,37 +78,13 @@ WSGI_APPLICATION = 'jwt1.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-
-# if(DEBUG):
-
-#     DATABASES = {
-#         'default': {
-#             'ENGINE': 'django.db.backends.sqlite3',
-#             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#         }
-#     }
-# else:
-#     DATABASES = {
-#         'default': {
-#             'ENGINE': 'django.db.backends.postgresql',
-#             'NAME': 'postgres',
-#             'USER': 'postgres',
-#             'PASSWORD': 'postgres',
-#             'HOST': 'db',
-#             'PORT': 5432
-#         }
-#     }
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
-        'HOST': 'db',
-        'PORT': 5432
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'mydatabase',
     }
 }
+
 
 
 # Password validation
@@ -159,7 +135,7 @@ CORS_ALLOW_CREDENTIALS = True
 CORS_ORIGIN_WHITELIST = (
     'http://localhost:8080',
     'http://127.0.0.1:8000',
-    'taskmaster-vue-drf.herokuapp.com'
+    'http://taskmaster-vue-drf.herokuapp.com'
 )
 
 REST_FRAMEWORK = {
