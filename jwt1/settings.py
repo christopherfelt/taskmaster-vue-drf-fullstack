@@ -86,6 +86,16 @@ DATABASES = {
     }
 }
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': 'db',
+        'PORT': 5432
+    }
+}
 
 
 # Password validation
@@ -140,11 +150,11 @@ CORS_ORIGIN_WHITELIST = (
 )
 
 REST_FRAMEWORK = {
-    # 'DEFAULT_PERMISSION_CLASSES': (
-    #     # By default we set everything to admin,
-    #     #   then open endpoints on a case-by-case basis
-    #     'rest_framework.permissions.IsAdminUser',
-    # ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        # By default we set everything to admin,
+        #   then open endpoints on a case-by-case basis
+        'rest_framework.permissions.IsAdminUser',
+    ),
     'TEST_REQUEST_RENDERER_CLASSES': (
         'rest_framework.renderers.MultiPartRenderer',
         'rest_framework.renderers.JSONRenderer',
