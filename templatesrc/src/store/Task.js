@@ -14,7 +14,6 @@ let api = axios.create({
   timeout: 3000,
   withCredentials: true,
   headers: {
-    Authorization: `JWT ${localStorage.getItem("token")}`,
     "Content-Type": "application/json",
   },
   xhrFields: {

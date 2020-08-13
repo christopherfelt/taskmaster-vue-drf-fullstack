@@ -15,6 +15,7 @@ whitenoise = "*"
 psycopg2-binary = "==2.8.4"
 dj-database-url = "==0.5.0"
 gunicorn = "*"
+mysqlclient = "*"
 
 [requires]
 python_version = "3.8"
