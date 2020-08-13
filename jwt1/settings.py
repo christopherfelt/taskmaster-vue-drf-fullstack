@@ -1,6 +1,11 @@
 
 import os
 
+if os.getenv("ENVIRONMENT") != "production":
+    from dotenv import load_dotenv
+    load_dotenv()
+
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -9,10 +14,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'e&&_vryj692zrsay%1m9l-oe_-)i$)&9z0+%ovs$zmmo$yn!99'
+# SECRET_KEY = 'e&&_vryj692zrsay%1m9l-oe_-)i$)&9z0+%ovs$zmmo$yn!99'
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
+DEBUG = os.getenv("DEBUG")
 
 ALLOWED_HOSTS = ["taskmaster-vue-drf.herokuapp.com", "localhost", "127.0.0.1"]
 
@@ -79,12 +86,6 @@ WSGI_APPLICATION = 'jwt1.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': 'mydatabase',
-#     }
-# }
 
 DATABASES = {
     'default': {
@@ -96,6 +97,12 @@ DATABASES = {
         'PORT': 3306
     }
 }
+
+
+import dj_database_url
+db_path = os.getenv("DB_PATH")
+DATABASES['default'] = dj_database_url.config(default=db_path)
+
 
 
 # Password validation
@@ -176,6 +183,3 @@ JWT_AUTH = {
     'JWT_EXPIRATION_DELTA': timedelta(hours=1),
     'JWT_REFRESH_EXPIRATION_DELTA': timedelta(days=7)
 }
-
-import dj_database_url
-DATABASES['default'] = dj_database_url.config(default='mysql://taskmaster:Ej38bCv1kl_~@den1.mysql5.gear.host:3306/taskmaster')
